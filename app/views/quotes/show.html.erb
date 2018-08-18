@@ -1,14 +1,21 @@
+<div class="wrapper">
+	      <div class="citation-container">
+	<div class="quote-div">
+	<q>
+	  <%= @quote.content %>
+	</q>
+	<cite>
+	  <%= @quote.author %>
+	</cite>
+	</div>
+	<div class="operations-div">
+	<div class="operations-on-quotes">
+      <%= link_to image_tag("pencil-edit-button.png"), edit_quote_path(@quote) %>
+      <%= link_to image_tag("trash-can.png"), @quote, method: :delete, data: { confirm: 'Are you sure?' } %> 
+     </div>
+      <%= link_to 'Back', quotes_path %>
+
+    </div>
+</div>
+</div>
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Author:</strong>
-  <%= @quote.author %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @quote.content %>
-</p>
-
-<%= link_to 'Edit', edit_quote_path(@quote) %> |
-<%= link_to 'Back', quotes_path %>

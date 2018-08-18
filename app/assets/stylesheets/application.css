@@ -43,9 +43,14 @@ body {
 .quote-div{
 	flex-grow: 1;
 	padding:10px 30px;
+	max-width: 80%;
+}
+cite, q {
+	overflow-wrap: break-word;
 }
 cite {
 	margin-top: 1.5em;
+	max-width: 80%;
 	float:right;
 }
 footer{
@@ -84,19 +89,21 @@ form > div {
 .operations-div {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: space-around;
 }
 
 
 .operations-div > time {
-	color:#ccc;
+	color:#888;
 	font-size: .9em;
 }
 
 .pagination {
   text-align: center;
   padding: 0.3em;
-  cursor: default; }
+  cursor: default;
+  margin-bottom: 20px;
+}
   .pagination a, .pagination span, .pagination em {
     padding: 0.2em 0.5em; }
   .pagination .disabled {
