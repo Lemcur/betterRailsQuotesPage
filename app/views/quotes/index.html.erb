@@ -13,11 +13,12 @@
           <q> <%= quote.content %></q>
           <cite><%= quote.author %></cite>
         </div>
-        <div class="edit">
-          <%= link_to image_tag("pencil-edit-button.png"), edit_quote_path(quote) %>
-        </div>
-        <div class="destroy">
-          <%= link_to image_tag("trash-can.png"), quote, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <div class="operations-div">
+          <div class="operations-on-quotes">
+            <%= link_to image_tag("pencil-edit-button.png"), edit_quote_path(quote) %>
+            <%= link_to image_tag("trash-can.png"), quote, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+          <time><%= quote.created_at.strftime("%d %B %Y") %></time>
         </div>
       </div>
     <% end %>
