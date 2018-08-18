@@ -24,13 +24,20 @@ body {
 	margin: auto;
 }
 .wrapper {
-	min-width: 660px;
+	padding-right: 5%;
+	padding-left:5%;
+	width:90%;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	flex:1 0 auto;
-	width: 80%;
 	background: #FCFCFC;
+}
+@media(min-width: 1024px){
+	.wrapper{
+		min-width: 660px;
+		width: 80%;
+	}
 }
 .citation-container {
 	margin: 10px auto;
