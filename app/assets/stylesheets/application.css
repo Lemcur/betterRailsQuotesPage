@@ -23,20 +23,17 @@ body {
 	height:100%;
 	margin: auto;
 }
-@media(max-width: 768px){
-	width:100%;
-}
 .wrapper {
-	min-width: 660px;
+	width: 100%;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	flex:1 0 auto;
-	width: 70%;
 	background: #FCFCFC;
-	@media(max-width: 768px){
-	width:100%;
-}
+	@media (min-width: 768px) {
+	width: 70%;
+	min-width: 660px;
+	}
 }
 .citation-container {
 	margin: 10px auto;
