@@ -6,6 +6,7 @@
 <body>
   <div class="wrapper">
     <h1>Top quality quotes!</h1>
+    <%= will_paginate @quotes, previous_label: h("< "), next_label: h("> ") %>
     <% @quotes.each do |quote| %>
       <div class="citation-container">
         <div class="quote-div">

@@ -4,7 +4,8 @@ class QuotesController < ApplicationController
   # GET /quotes
   # GET /quotes.json
   def index
-    @quotes = Quote.all
+    @quotes = Quote.order(:created_at => :desc).paginate(page: params[:page], per_page: 12)
+    # @quotes = Quote.paginate(page: params[:page], per_page: 12)
   end
 
   # GET /quotes/1
@@ -26,14 +27,12 @@ class QuotesController < ApplicationController
   def create
     @quote = Quote.new(quote_params)
 
-    respond_to do |format|
-      if @quote.save
-        format.html { redirect_to quotes_path, notice: 'Quote was successfully created.' }
-        format.json { render :show, status: :created, location: quotes_path }
-      else
-        format.html { render :new }
-        format.json { render json: @quote.errors, status: :unprocessable_entity }
-      end
+    if @quote.author.strip != "" && @quote.content.strip != ""
+      redirect_to quotes_path, notice: 'Quote was successfully created.' if @quote.save 
+    else
+      flash.now.alert = "You need to type something here!"
+      # redirect_to new_quote_path, alert: "You need to type something here!"
+      render :new
     end
   end
 
