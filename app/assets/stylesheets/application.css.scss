@@ -96,7 +96,9 @@ form > div {
 	flex-direction: column;
 	justify-content: space-around;
 }
-
+.operations-on-quotes > * {
+	display: inline;
+}
 
 .operations-div > time {
 	color:#888;
