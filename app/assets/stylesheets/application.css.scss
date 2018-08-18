@@ -29,14 +29,8 @@ body {
 	display: flex;
 	flex-direction: column;
 	flex:1 0 auto;
-	width: 70%;
+	width: 80%;
 	background: #FCFCFC;
-	@media handheld {
-		min-width:0;
-		width:100%;
-		padding-left: 20px;
-		padding-right: 20px;
-	}
 }
 .citation-container {
 	margin: 10px auto;
@@ -135,3 +129,30 @@ form > div {
     margin-right: 1em; }
   .pagination .next_page {
     margin-left: 1em; }
+
+.alert, .notice{
+	margin: 0;
+	padding: 2rem;
+	font-weight: bold;
+	letter-spacing: 1px
+}
+.alert{
+	color:#8a6d3b;
+}
+.notice{
+	color: #fff;
+}
+
+.alert-wrapper, .notice-wrapper {
+	position: absolute;
+	top: 0;
+	text-align: center;
+	width: 100%;
+	z-index: 99;
+}
+.alert-wrapper{
+	background-color: rgba(252,248,227,.85);
+}
+.notice-wrapper{
+	background-color: rgba(135,216,211,.85);
+}
